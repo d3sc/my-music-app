@@ -1,37 +1,69 @@
-# Binaries
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
+# =====================
+# Backend Golang
+# =====================
 
-# Go build output
-bin/
-build/
-dist/
-*.test
-*.out
+# Binary executable
+backend/*.exe
+backend/*.exe~
+backend/*.out
+backend/*.test
+backend/build/
 
-# Go module & cache
-vendor/
-.gomodcache/
-.gocache/
-*.log
+# Vendor / dependencies
+backend/vendor/
 
-# IDE / editor
-.vscode/
-.idea/
-*.swp
-*~
-.DS_Store
+# IDE/editor
+backend/.vscode/
+backend/.idea/
+backend/*.iml
 
-# Env files
-.env
-.env.*
-!.env.example
+# Logs
+backend/*.log
 
-# OS-specific
-Thumbs.db
+# Environment
+backend/.env
 
-# Music storage (file audio besar, hasil upload)
-music_storage/
+# =====================
+# Flutter Mobile App
+# =====================
+
+# Flutter/Dart
+mobile/.dart_tool/
+mobile/build/
+mobile/.packages
+mobile/pubspec.lock
+
+# Android
+mobile/android/.gradle/
+mobile/android/app/debug/
+mobile/android/app/profile/
+mobile/android/app/release/
+mobile/android/local.properties
+mobile/android/*.iml
+mobile/android/*.apk
+mobile/android/*.aar
+mobile/android/*.keystore
+
+# iOS
+mobile/ios/Flutter/Flutter.framework
+mobile/ios/Flutter/Flutter.podspec
+mobile/ios/Pods/
+mobile/ios/Runner.xcworkspace/
+mobile/ios/Runner/GeneratedPluginRegistrant.*
+mobile/ios/.symlinks/
+mobile/ios/Flutter/Generated.xcconfig
+mobile/ios/*.mode1v3
+mobile/ios/*.mode2v3
+mobile/ios/*.pbxuser
+mobile/ios/*.perspectivev3
+mobile/ios/*.xcuserstate
+
+# VS Code
+mobile/.vscode/
+
+# IntelliJ / Android Studio
+mobile/.idea/
+mobile/*.iml
+
+# Logs
+mobile/*.log

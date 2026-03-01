@@ -1,0 +1,34 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: music_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_DB: music_app
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  api:
+    build: .
+    volumes:
+      # local development
+      - ./music_storage:/app/storage
+      # for vps development
+      # - /srv/music_storage:/app/uploads
+    environment:
+      - UPLOAD_PATH=/app/storage
+    container_name: music_api
+    restart: always
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:
